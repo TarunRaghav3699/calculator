@@ -20,5 +20,5 @@ def calculate():
     except (ValueError, SyntaxError):
         return jsonify({"error": "Invalid expression"})
 
-if __name__ == '__main':
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
