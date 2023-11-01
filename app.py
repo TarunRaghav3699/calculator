@@ -1,4 +1,5 @@
 """app.py"""
+import ast
 from flask import Flask, request, render_template, jsonify
 
 app = Flask(__name__)
@@ -14,7 +15,6 @@ def calculate():
     try:
         expression = request.form['expression']
         # Use a safer expression evaluation method like 'ast.literal_eval'
-        import ast
         result = ast.literal_eval(expression)
         return jsonify({"result": result})
     except (ValueError, SyntaxError):
